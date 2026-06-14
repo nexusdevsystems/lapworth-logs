@@ -1,1 +1,81 @@
+/* CONTACT */
 
+.contact{
+    background:#000;
+    margin-top:50px;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.contact h2{
+    color:#d4af37;
+    margin-bottom:20px;
+    font-size:2.2rem;
+}
+
+.phone{
+    margin:20px 0;
+}
+
+.phone a{
+    color:#d4af37;
+    text-decoration:none;
+    font-size:2.8rem;
+    font-weight:bold;
+}
+
+.phone a:hover{
+    color:white;
+}
+
+.contact-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.call-btn,
+.whatsapp-btn{
+    text-decoration:none;
+    padding:16px 34px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:1.1rem;
+    transition:0.3s;
+}
+
+.call-btn{
+    background:#d4af37;
+    color:#000;
+}
+
+.call-btn:hover{
+    background:#efc64a;
+}
+
+.whatsapp-btn{
+    background:#25D366;
+    color:#fff;
+}
+
+.whatsapp-btn:hover{
+    background:#1faa50;
+}
+
+@media(max-width:768px){
+    .phone a{
+        font-size:2rem;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .call-btn,
+    .whatsapp-btn{
+        width:260px;
+    }
+}
