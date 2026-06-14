@@ -19,27 +19,27 @@ html{
 }
 
 body{
-    background:#f5f5f5;
-    color:#222;
+    background:#111;
+    color:#fff;
 }
 
 /* ===== MENU ===== */
 
 nav{
-    background:#111;
+    background:#000;
+    border-bottom:3px solid #d4af37;
     position:sticky;
     top:0;
-    z-index:1000;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    z-index:999;
 }
 
 .nav-container{
     max-width:1200px;
     margin:auto;
+    padding:15px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 20px;
 }
 
 .logo{
@@ -66,16 +66,17 @@ nav{
 
 /* ===== BANNER ===== */
 
-.hero{
+.banner{
     max-width:1200px;
-    margin:25px auto;
-    padding:0 20px;
+    margin:20px auto;
+    padding:0 15px;
 }
 
-.hero img{
+.banner img{
     width:100%;
     border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.25);
+    display:block;
+    box-shadow:0 0 20px rgba(212,175,55,0.2);
 }
 
 /* ===== SECTIONS ===== */
@@ -83,13 +84,13 @@ nav{
 .section{
     max-width:1100px;
     margin:auto;
-    padding:60px 20px;
+    padding:70px 20px;
 }
 
 .section h2{
+    color:#d4af37;
     text-align:center;
-    color:#8b5a2b;
-    margin-bottom:20px;
+    margin-bottom:25px;
     font-size:2.3rem;
 }
 
@@ -97,49 +98,60 @@ nav{
     text-align:center;
     max-width:850px;
     margin:auto;
-    color:#555;
+    color:#ddd;
     line-height:1.8;
     font-size:1.1rem;
 }
 
-/* ===== FEATURES ===== */
+/* ===== WHAT WE SELL ===== */
 
-.features{
-    margin-top:40px;
+.cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
+    margin-top:40px;
 }
 
-.feature-box{
-    background:white;
-    padding:25px;
+.card{
+    background:#1a1a1a;
+    border:1px solid #d4af37;
     border-radius:10px;
+    padding:25px;
     text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
-.feature-box h3{
-    color:#8b5a2b;
-    margin-bottom:10px;
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#d4af37;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#ddd;
+    font-size:1rem;
 }
 
 /* ===== CONTACT ===== */
 
 .contact{
-    background:#111;
-    color:white;
-    padding:60px 20px;
+    background:#000;
+    border-top:3px solid #d4af37;
     text-align:center;
+    padding:70px 20px;
 }
 
 .contact h2{
     color:#d4af37;
     margin-bottom:20px;
+    font-size:2.2rem;
 }
 
 .phone{
-    font-size:2.5rem;
+    font-size:2.8rem;
     font-weight:bold;
     margin:20px 0;
 }
@@ -149,7 +161,7 @@ nav{
     text-decoration:none;
 }
 
-.buttons{
+.contact-buttons{
     margin-top:30px;
     display:flex;
     justify-content:center;
@@ -159,12 +171,11 @@ nav{
 
 .call-btn,
 .whatsapp-btn{
-    text-decoration:none;
     padding:16px 34px;
     border-radius:8px;
-    font-size:1.1rem;
+    text-decoration:none;
     font-weight:bold;
-    transition:0.3s;
+    font-size:1.1rem;
 }
 
 .call-btn{
@@ -173,23 +184,23 @@ nav{
 }
 
 .call-btn:hover{
-    background:#e6be50;
+    background:#e5be49;
 }
 
 .whatsapp-btn{
     background:#25D366;
-    color:white;
+    color:#fff;
 }
 
 .whatsapp-btn:hover{
-    background:#1daa54;
+    background:#1faa50;
 }
 
 footer{
-    background:#000;
+    background:#111;
     color:#999;
     text-align:center;
-    padding:18px;
+    padding:20px;
     font-size:0.9rem;
 }
 
@@ -199,7 +210,7 @@ footer{
 
     .nav-container{
         flex-direction:column;
-        gap:10px;
+        gap:12px;
     }
 
     .menu{
@@ -212,7 +223,7 @@ footer{
         font-size:2rem;
     }
 
-    .buttons{
+    .contact-buttons{
         flex-direction:column;
         align-items:center;
     }
@@ -225,8 +236,8 @@ footer{
 }
 
 </style>
-</head>
 
+</head>
 <body>
 
 <!-- MENU -->
@@ -238,6 +249,7 @@ footer{
         <div class="menu">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
+            <a href="#sell">What We Sell</a>
             <a href="#contact">Contact Us</a>
         </div>
     </div>
@@ -245,8 +257,8 @@ footer{
 
 <!-- HOME -->
 
-<section id="home" class="hero">
-    <img src="lapworth-banner.png" alt="Lapworth Logs Flyer">
+<section id="home" class="banner">
+    <img src="lapworth-banner.png" alt="Lapworth Logs">
 </section>
 
 <!-- ABOUT -->
@@ -256,32 +268,50 @@ footer{
     <h2>About Us</h2>
 
     <p>
-        Lapworth Logs supplies premium seasoned hardwood logs for log burners,
-        wood-burning stoves and open fires. We provide a friendly and reliable
-        local delivery service with quality firewood cut to size and stacked
-        neatly for your convenience.
+        Lapworth Logs is a trusted local supplier of premium seasoned
+        hardwood logs for log burners, open fires and wood-burning stoves.
+        We pride ourselves on providing quality firewood, reliable local
+        deliveries and friendly customer service.
     </p>
 
-    <div class="features">
+</section>
 
-        <div class="feature-box">
-            <h3>🔥 Seasoned Hardwood</h3>
-            <p>Dry, quality logs for a clean and efficient burn.</p>
+<!-- WHAT WE SELL -->
+
+<section id="sell" class="section">
+
+    <h2>What We Sell</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🪵 Seasoned Hardwood Logs</h3>
+            <p>Quality hardwood logs, properly seasoned and ready to burn.</p>
         </div>
 
-        <div class="feature-box">
+        <div class="card">
+            <h3>🔥 Logs for Stoves & Fires</h3>
+            <p>Cut to the ideal size for log burners and open fireplaces.</p>
+        </div>
+
+        <div class="card">
+            <h3>📦 Builders Bags</h3>
+            <p>Large builders bags available for excellent value and convenience.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌲 Kindling Wood</h3>
+            <p>Dry kindling to help get your fire started quickly.</p>
+        </div>
+
+        <div class="card">
             <h3>🚚 Local Delivery</h3>
-            <p>Delivered directly to your home and stacked if required.</p>
+            <p>Fast local delivery with logs stacked neatly upon request.</p>
         </div>
 
-        <div class="feature-box">
-            <h3>🪵 Cut to Fit</h3>
-            <p>Perfect for log burners, stoves and traditional fireplaces.</p>
-        </div>
-
-        <div class="feature-box">
-            <h3>⭐ Reliable Service</h3>
-            <p>Friendly local business offering dependable deliveries.</p>
+        <div class="card">
+            <h3>⭐ Mixed Orders</h3>
+            <p>Combine logs and kindling to suit your household needs.</p>
         </div>
 
     </div>
@@ -294,23 +324,25 @@ footer{
 
     <h2>Contact Us</h2>
 
-    <p>Call or WhatsApp David Stanley for prices and availability.</p>
+    <p>Call or WhatsApp <strong>Lapworth Logs</strong> for prices and availability.</p>
 
     <div class="phone">
-        <a href="tel:07768548837">07768 548 837</a>
+        <a href="tel:07768548837">
+            07768 548 837
+        </a>
     </div>
 
-    <div class="buttons">
+    <div class="contact-buttons">
 
         <a class="call-btn"
            href="tel:07768548837">
-           📞 Call Now
+            📞 Call Now
         </a>
 
         <a class="whatsapp-btn"
-           href="https://wa.me/447768548837?text=Hello%20David,%20I%20would%20like%20to%20order%20some%20seasoned%20logs."
+           href="https://wa.me/447768548837?text=Hello,%20I%20would%20like%20information%20about%20Lapworth%20Logs."
            target="_blank">
-           💬 WhatsApp
+            💬 WhatsApp
         </a>
 
     </div>
